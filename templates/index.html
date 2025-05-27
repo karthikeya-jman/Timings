@@ -120,13 +120,20 @@
                 <label>After Lunch Check-in Again:</label>
                 <input type="time" name="am_checkin" required>
             </div>
+
+            <div class="form-group">
+                <label>Break-Time (in mins) :</label>
+                <input type="text" name="break_mins" placeholder="0 (Default)">
+            </div>
             
             <input type="submit" value="Calculate End Time">
         </form>
         
         {% if result %}
-            <h3>Expected End Time: {{ result }}</h3>
-            <span>(10 Mins extra for Good HandWriting)</span>
+        <span>(10 Mins extra for Good HandWriting)</span>
+            <h3>Expected End Time: {{ out_time }}</h3>
+            <h3>Expected Next Train: {{ next_train }}</h3>
+            Trains : {{ trains_list }}
         {% endif %}
     </div>
 </body>
